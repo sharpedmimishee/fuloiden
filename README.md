@@ -1,5 +1,5 @@
 # fuloiden
-A editor for synthesis audio.
+A editor for synthesis audio. you can make some characters pronounce what you want to make them say forcibly.
 ## Why did you start to make this?
 This project was created before this repository was created because I just wanted it. That's all.  
 As for its name, fistly I thought that I would name the project Synthefuloid.  
