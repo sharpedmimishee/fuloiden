@@ -52,7 +52,7 @@ classDef dashedNode stroke-dasharray: 5 5
 ```
 ## Engine System
 Fuloiden uses a engine for adjusting and connecting each notes and so on.  
-Fuloiden can use some engines simultaneously and in that case, the engines will be used each them on the basis of order of them.
+Fuloiden can use some engines simultaneously and in that case, Fuloiden will use them each the engines on the basis of order of them.
 ```mermaid
 ---
 title: Fuloiden
