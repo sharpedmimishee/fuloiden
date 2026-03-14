@@ -50,9 +50,9 @@ end
 audiosource---abouttoml & licensefile & audiodatafiles & connectiontoml & audiodatatoml
 classDef dashedNode stroke-dasharray: 5 5
 ```
-## Engine System
-Fuloiden uses a engine for adjusting and connecting each notes and so on.  
-Fuloiden can use some engines simultaneously and in that case, Fuloiden will use them each the engines on the basis of order of them.
+## Audio Processor System
+Fuloiden uses a audio processor for adjusting and connecting each notes and so on.  
+Fuloiden can use some processors simultaneously and in that case, Fuloiden will use them each the processors on the basis of order of them.
 ```mermaid
 ---
 title: Fuloiden
@@ -63,21 +63,21 @@ config:
 flowchart LR
 gui(GUI)
 audiosource[("Audio Source")]
-subgraph engines["Fuloiden Engines"]
-  engine1("Engine 1")
-  engine2("Engine 2")
+subgraph processors["Fuloiden Audio Processors"]
+  processor1("Processor 1")
+  processor2("Processor 2")
   audiobuffer[("Audio Buffer")]
-  engine1-->|Process the audio from given note configs|audiobuffer
-  audiobuffer-->|Get the audio data|engine2-->|Process the audio in the same way|audiobuffer
+  processor1-->|Process the audio from given note configs|audiobuffer
+  audiobuffer-->|Get the audio data|processor2-->|Process the audio in the same way|audiobuffer
 end
 renderedaudio[("Rendered Audio")]
 renderedjoint{ }
-audiosource-->|Get the audio data|engines
-gui-->|Request to render the audio from configs of notes|engines-->|Get the configs of notes|gui
-engines-->|Render the audio and return it|renderedaudio
+audiosource-->|Get the audio data|processors
+gui-->|Request to render the audio from configs of notes|processors-->|Get the configs of notes|gui
+processors-->|Render the audio and return it|renderedaudio
 renderedaudio & gui-->renderedjoint-->|Export the audio|exportedaudiofile[("Exported Audio File")]
 renderedjoint-->|Play the audio|playaudio("Play the audio")
 ```
-There is a list of engines by the creator:  
-- dequidil (the name is from liquid) - The default engine for Fuloiden.  
-- deopevarat (the name is from evaporate) - The creator's AI Engine for Fuloiden. It is not default engine because it is anticipated to be unstable and most outputs may be low quality.  
+There is a list of audio processors by the creator:  
+- dequidil (the name is from liquid) - The default audio processor for Fuloiden.  
+- deopevarat (the name is from evaporate) - The creator's AI processor for Fuloiden. It is not default processor because it is anticipated to be unstable and most outputs may be low quality.  
